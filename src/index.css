@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #006565;
+  --color-primary-light: #008080;
+  --color-primary-container: #e3fffe;
+  --color-on-primary-container: #002020;
+  
+  --color-secondary: #fd8b00;
+  --color-secondary-dark: #e67e00;
+  --color-secondary-container: #ffdcc3;
+  --color-on-secondary-container: #2f1500;
+  
+  --color-background: #f9f9fc;
+  --color-surface: #ffffff;
+  --color-surface-low: #f3f3f6;
+  --color-surface-high: #e8e8ea;
+  
+  --color-outline: #6e7979;
+  --color-outline-variant: #bdc9c8;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-[#1a1c1e] font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-[#1a1c1e];
+  }
+}
+
+.shadow-ambient {
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.05);
+}
+
+.shadow-card {
+  box-shadow: 0 8px 24px rgba(0, 128, 128, 0.08);
+}
+
+.shadow-float {
+  box-shadow: 0 24px 48px -12px rgba(0, 128, 128, 0.12);
+}
