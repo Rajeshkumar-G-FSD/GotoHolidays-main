@@ -166,6 +166,35 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
         </div>
       </section>
 
+      {/* Flight Coupon Marquee */}
+      <div className="w-full bg-primary overflow-hidden relative z-20 py-2.5">
+        <div className="marquee-track">
+          {[...Array(2)].map((_, gi) => (
+            <div key={gi} className="flex items-center gap-0">
+              {[
+                { code: 'FLY10',      desc: '10% off on all flights' },
+                { code: 'FIRSTFLY',   desc: '₹500 off on first booking' },
+                { code: 'SUMMER25',   desc: '25% off on summer flights' },
+                { code: 'INTL15',     desc: '15% off on international flights' },
+                { code: 'EARLYBIRD',  desc: '₹1000 off on advance bookings' },
+                { code: 'GOTO20',     desc: '20% off with GotoHolidays' },
+                { code: 'WEEKEND12',  desc: '12% off on weekend getaways' },
+                { code: 'MONSOON30', desc: '30% off on monsoon specials' },
+              ].map((coupon, i) => (
+                <span key={i} className="flex items-center whitespace-nowrap">
+                  <span className="flex items-center gap-2 px-6">
+                    <Plane size={13} className="text-white/70 flex-shrink-0" />
+                    <span className="text-white/60 text-xs font-semibold uppercase tracking-widest">{coupon.desc}</span>
+                    <span className="bg-secondary text-white text-[10px] font-black px-2.5 py-0.5 rounded-full tracking-wider uppercase">{coupon.code}</span>
+                  </span>
+                  <span className="text-white/30 text-base select-none">✦</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Spacer for overlapping search */}
       <div className="h-56 md:h-32 lg:h-36"></div>
 
